@@ -69,7 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### Features
+# Features
 
 ->9x9 Grid Input: Users can input numbers (1-9) or leave cells blank for unsolved cells.
 ->Difficulty Levels: Choose from Easy, Medium, or Hard pre-defined puzzles.
@@ -78,45 +78,45 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ->Hints: Fills one correct empty cell to help users solve the puzzle.
 ->Responsive UI: Styled with Tailwind CSS for a modern and mobile-friendly design.
 
-### Approach
-## Validation Logic
+# Approach
+### Validation Logic
 The validation logic checks if the current state of the Sudoku grid follows these rules:
 
-# Row Uniqueness: Each number from 1 to 9 should appear only once in each row.
-# Column Uniqueness: Each number from 1 to 9 should appear only once in each column.
-# 3x3 Subgrid Uniqueness: Each number from 1 to 9 should appear only once in each 3x3 subgrid.
+Row Uniqueness: Each number from 1 to 9 should appear only once in each row.
+Column Uniqueness: Each number from 1 to 9 should appear only once in each column.
+3x3 Subgrid Uniqueness: Each number from 1 to 9 should appear only once in each 3x3 subgrid.
 
-## To implement this:
+# To implement this:
 
 1. We iterate over each row, column, and 3x3 subgrid to ensure no duplicates are present.
 2. If any row, column, or subgrid has duplicates, the grid is marked as invalid.
 
-## Solving Algorithm
+# Solving Algorithm
 The Sudoku solver uses a backtracking algorithm:
 
 1. Identify Empty Cells: First, locate an empty cell (a cell with no value).
 2. Attempt to Place a Value: For each empty cell, attempt to place a value (1-9).
-# Check if the placement is valid based on the validation logic above.
+### Check if the placement is valid based on the validation logic above.
 3. Recursive Backtracking:
-# If a placement is valid, recursively move to the next empty cell.
-# If an invalid placement is encountered, backtrack by removing the last placed value and trying the next number.
+### If a placement is valid, recursively move to the next empty cell.
+### If an invalid placement is encountered, backtrack by removing the last placed value and trying the next number.
 4. Completion: The algorithm continues until all cells are filled or determines that no solution exists.
 Backtracking is a trial-and-error method that explores all possibilities, making it efficient for solving Sudoku puzzles within reasonable time limits.
 
-### Technologies Used
-# React: JavaScript library for building user interfaces.
-# Tailwind CSS: Utility-first CSS framework for styling.
-# gh-pages: Tool to deploy the app on GitHub Pages.
+## Technologies Used
+React: JavaScript library for building user interfaces.
+Tailwind CSS: Utility-first CSS framework for styling.
+gh-pages: Tool to deploy the app on GitHub Pages.
 
-### Additional Notes
-# Backtracking Efficiency: The backtracking algorithm used here is effective for typical Sudoku puzzles but may take longer for complex or unusual grids.
-# React Optimization: The app uses React’s state and lifecycle methods for smooth UI interaction and reactivity.
-# Error Handling: If the grid is invalid or unsolvable, an appropriate error message is displayed.
+## Additional Notes
+Backtracking Efficiency: The backtracking algorithm used here is effective for typical Sudoku puzzles but may take longer for complex or unusual grids.
+React Optimization: The app uses React’s state and lifecycle methods for smooth UI interaction and reactivity.
+Error Handling: If the grid is invalid or unsolvable, an appropriate error message is displayed.
 
-### Future Enhancements
-# Multiple Hints: Allow users to get more than one hint.
-# Timer: Add a timer to track how long it takes to solve the puzzle.
-# Theme Options: Add a dark mode for improved accessibility.
+## Future Enhancements
+ Multiple Hints: Allow users to get more than one hint.
+ Timer: Add a timer to track how long it takes to solve the puzzle.
+ Theme Options: Add a dark mode for improved accessibility.
 
-### License
+## License
 This project is licensed under the MIT License.
